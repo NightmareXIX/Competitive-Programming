@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 #define rep(i, n) for (int i = 0; i < (n); i++)
@@ -26,7 +27,23 @@ void print(T& a)
 
 void solve(int tc)
 {
-    cout << "Testing..." << el;
+    int n, k;
+    cin >> n >> k;
+    vi arr(n);
+    arr[k - 1] = 1;
+    int boro = n, choto = 1;
+    for (int i = 1; i <= n; i++) {
+        if (i % k == 0) {
+            arr[i - 1] = choto;
+            choto++;
+        }
+    }
+    for (int i = 0; i < n; i++) {
+        if (arr[i]) continue;
+        arr[i] = boro;
+        boro--;
+    }
+    print(arr);
 }
 
 int32_t main(void)

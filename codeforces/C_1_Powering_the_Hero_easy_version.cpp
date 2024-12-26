@@ -1,4 +1,7 @@
 #include <bits/stdc++.h>
+#include <iostream>
+#include <queue>
+
 using namespace std;
 
 #define rep(i, n) for (int i = 0; i < (n); i++)
@@ -26,7 +29,23 @@ void print(T& a)
 
 void solve(int tc)
 {
-    cout << "Testing..." << el;
+    int n;
+    cin >> n;
+    priority_queue<int> pq;
+    ll sum = 0;
+    rep(i, n) {
+        int x; cin >> x;
+        if (x) {
+            pq.push(x);
+        }
+        else {
+            if (!pq.empty()) {
+                sum += pq.top();
+                pq.pop();
+            }
+        }
+    }
+    cout << sum << el;
 }
 
 int32_t main(void)

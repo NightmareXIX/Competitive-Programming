@@ -26,7 +26,13 @@ void print(T& a)
 
 void solve(int tc)
 {
-    cout << "Testing..." << el;
+    ll n, cnt = 0;
+    cin >> n;
+    while (n > 3) {
+        n /= 4;
+        cnt++;
+    }
+    cout << (ll)(1 << cnt) << el;
 }
 
 int32_t main(void)

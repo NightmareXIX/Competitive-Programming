@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 #define rep(i, n) for (int i = 0; i < (n); i++)
@@ -26,7 +27,24 @@ void print(T& a)
 
 void solve(int tc)
 {
-    cout << "Testing..." << el;
+    int n, q;
+    cin >> n >> q;
+    vl arr(n), psum(n + 1);
+    
+    rep(i, n) {
+        cin >> arr[i];
+        psum[i + 1] = psum[i] + arr[i];
+    }
+    
+    while (q--) {
+        int l, r, k;
+        cin >> l >> r >> k;
+
+        ll baki = psum[n] - (psum[r] - psum[l - 1]) + k * (r - l + 1);
+        
+        if (baki & 1) yes;
+        else no;
+    }
 }
 
 int32_t main(void)

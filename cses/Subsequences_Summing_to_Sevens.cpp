@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 #define rep(i, n) for (int i = 0; i < (n); i++)
@@ -26,14 +27,32 @@ void print(T& a)
 
 void solve(int tc)
 {
-    cout << "Testing..." << el;
+    int n;
+    cin >> n;
+    vl psum(n + 1);
+    rep(i, n) {
+        int x; cin >> x;
+        psum[i + 1] = psum[i] + x;
+    }
+    int mx = 0;
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 0; j < i; ++j) {
+            if ((psum[i] - psum[j]) % 7 == 0) 
+                mx = max(mx, i - j);
+        }
+    }
+    cout << mx << el;
 }
 
 int32_t main(void)
 {
     ios::sync_with_stdio(false); cin.tie(nullptr);
     int t = 1;
-    cin >> t;
+    // cin >> t;
+
+    freopen("div7.in", "r", stdin);
+    freopen("div7.out", "w", stdout);
+
     for (int i = 1; i <= t; i++)
         solve(i);
 }

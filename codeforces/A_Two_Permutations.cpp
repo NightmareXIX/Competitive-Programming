@@ -6,8 +6,8 @@ using namespace std;
 #define lld long double
 #define el '\n'
 #define ws " "
-#define yes cout << "YES\n"
-#define no cout << "NO\n"
+#define yes cout << "Yes\n"
+#define no cout << "No\n"
 #define pbk push_back
 #define mkp make_pair
 #define ii pair<int, int>
@@ -26,7 +26,12 @@ void print(T& a)
 
 void solve(int tc)
 {
-    cout << "Testing..." << el;
+    int n, a, b;
+    cin >> n >> a >> b;
+    if ((n == a && n == b) || (a + b < n - 1)) 
+        yes;
+    else 
+        no;
 }
 
 int32_t main(void)
