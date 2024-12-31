@@ -26,9 +26,24 @@ void print(T& a)
 
 void solve(int tc)
 {
-    int a = 3, b = 7;
-    cout << a % b << el;
-    cout << (a - b) % b << el;
+    int n;
+    cin >> n;
+    vector<string> arr(n);
+    map<string, int> mp;
+    rep(i, n) {
+        cin >> arr[i];
+        mp[arr[i]] = 1;
+    }
+
+    for (int i = 0; i < n; i++) {
+        int sz = arr[i].size(), ch = 0;
+        for (int j = 1; j < sz; j++) {
+            string pref = arr[i].substr(0, j), suff = arr[i].substr(j, sz - j);
+            if (mp[pref] && mp[suff]) ch = 1;
+        }
+        cout << ch;
+    }
+    cout << el;
 }
 
 int32_t main(void)

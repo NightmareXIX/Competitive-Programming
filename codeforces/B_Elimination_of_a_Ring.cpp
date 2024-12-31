@@ -26,9 +26,24 @@ void print(T& a)
 
 void solve(int tc)
 {
-    int a = 3, b = 7;
-    cout << a % b << el;
-    cout << (a - b) % b << el;
+    int n, cnt = 0;
+    cin >> n;
+    vi arr(n);
+    unordered_map<int, int> ump;
+    rep(i, n) {
+        cin >> arr[i];
+        if (!ump[arr[i]]) cnt++;
+        ump[arr[i]] = 1;
+    }
+    if (n == 1) {
+        cout << 1 << el;
+    }
+    else if (cnt > 2) {
+        cout << n << el;
+    }
+    else {
+        cout << 2 + (n - 2) / 2 << el;
+    }
 }
 
 int32_t main(void)

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define rep(i, n) for (int i = 0; i < (n); i++)
+#define forn(i, n) for (int i = 0; i < (n); i++)
 #define ll long long
 #define lld long double
 #define el '\n'
@@ -24,11 +24,37 @@ void print(T& a)
     cout << "\n";
 }
 
+ll ans;
+map<pair<int, int>, ll> dp;
+
+void luckyValue(int l, int r, int k) {
+    int len = r - l + 1;
+    int m = (r + l) / 2;
+    if (len < k)
+        return;
+    if (dp[{r, k}]) {
+        ans += dp[{r, k}];
+        return;
+    }
+    if (len & 1) {
+        ans += m;
+        dp[{r, k}] = ans;
+        luckyValue(l, m - 1, k);
+        luckyValue(m + 1, r, k);
+    }
+    else {
+        luckyValue(l, m, k);
+        luckyValue(m + 1, r, k);
+    }
+}
+
 void solve(int tc)
 {
-    int a = 3, b = 7;
-    cout << a % b << el;
-    cout << (a - b) % b << el;
+    int n, k;
+    cin >> n >> k;
+    ans = 0;
+    luckyValue(1, n, k);
+    cout << ans << el;
 }
 
 int32_t main(void)

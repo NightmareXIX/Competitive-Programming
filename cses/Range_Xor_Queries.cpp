@@ -26,16 +26,26 @@ void print(T& a)
 
 void solve(int tc)
 {
-    int a = 3, b = 7;
-    cout << a % b << el;
-    cout << (a - b) % b << el;
+    int n, q;
+    cin >> n >> q;
+    vi pxor(n + 1);
+    rep(i, n) {
+        int x; cin >> x;
+        pxor[i + 1] = pxor[i] ^ x;
+    }
+
+    rep(i, q) {
+        int a, b;
+        cin >> a >> b;
+        cout << (pxor[b] ^ pxor[a - 1]) << el;
+    }
 }
 
 int32_t main(void)
 {
     ios::sync_with_stdio(false); cin.tie(nullptr);
     int t = 1;
-    cin >> t;
+    // cin >> t;
     for (int i = 1; i <= t; i++)
         solve(i);
 }

@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define rep(i, n) for (int i = 0; i < (n); i++)
+#define forn(i, n) for (int i = 0; i < (n); i++)
 #define ll long long
 #define lld long double
 #define el '\n'
 #define ws " "
-#define yes cout << "YES\n"
-#define no cout << "NO\n"
+#define yes cout << "Yes\n"
+#define no cout << "No\n"
 #define pbk push_back
 #define mkp make_pair
 #define ii pair<int, int>
@@ -26,9 +26,24 @@ void print(T& a)
 
 void solve(int tc)
 {
-    int a = 3, b = 7;
-    cout << a % b << el;
-    cout << (a - b) % b << el;
+    int n, k;
+    cin >> n >> k;
+    vi arr(n);
+    forn(i, k) cin >> arr[i];
+    if (n == 1 || k == 1) {
+        yes; return;
+    }
+    int diff = arr[1] - arr[0];
+    for (int i = 1; i < k; i++) {
+        if (arr[i] - arr[i - 1] < diff) {
+            no; return;
+        }
+        diff = arr[i] - arr[i - 1];
+    }
+
+    int prev = ceil((double)arr[0] / (n - k + 1));
+    if (prev > arr[1] - arr[0]) no;
+    else yes;
 }
 
 int32_t main(void)

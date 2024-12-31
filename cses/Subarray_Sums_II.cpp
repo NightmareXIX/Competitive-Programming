@@ -26,16 +26,27 @@ void print(T& a)
 
 void solve(int tc)
 {
-    int a = 3, b = 7;
-    cout << a % b << el;
-    cout << (a - b) % b << el;
+    int n, x;
+    cin >> n >> x;
+    ll cnt = 0;
+    vl psum(n + 1);
+    map<ll, ll> ump;
+    ump[0]++;
+    rep(i, n) {
+        int a; cin >> a;
+        psum[i + 1] = psum[i] + a;
+        
+        cnt += ump[psum[i + 1] - x];
+        ump[psum[i + 1]]++;
+    }
+    cout << cnt << el;
 }
 
 int32_t main(void)
 {
     ios::sync_with_stdio(false); cin.tie(nullptr);
     int t = 1;
-    cin >> t;
+    // cin >> t;
     for (int i = 1; i <= t; i++)
         solve(i);
 }

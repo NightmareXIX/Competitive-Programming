@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define rep(i, n) for (int i = 0; i < (n); i++)
+#define forn(i, n) for (int i = 0; i < (n); i++)
 #define ll long long
 #define lld long double
 #define el '\n'
@@ -26,9 +26,17 @@ void print(T& a)
 
 void solve(int tc)
 {
-    int a = 3, b = 7;
-    cout << a % b << el;
-    cout << (a - b) % b << el;
+    string s;
+    cin >> s;
+    int sz = s.size();
+    for (int i = 1; i < sz; i++) {
+        int j = i; char c = s[i];
+        while (j > 0 && c > s[j - 1] + 1) {
+            s[j] = s[j - 1];
+            s[--j] = --c;
+        }
+    }
+    cout << s << el;
 }
 
 int32_t main(void)

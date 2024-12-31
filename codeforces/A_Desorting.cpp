@@ -26,9 +26,22 @@ void print(T& a)
 
 void solve(int tc)
 {
-    int a = 3, b = 7;
-    cout << a % b << el;
-    cout << (a - b) % b << el;
+    int n, ch = 0;
+    cin >> n;
+    vi arr(n);
+    rep(i, n) {
+        cin >> arr[i];
+        if (i && arr[i] < arr[i - 1]) ch = 1;
+    }
+    if (ch) {
+        cout << 0 << el;
+        return;
+    }
+    int diff = INT_MAX;
+    for (int i = 0; i < n - 1; i++) {
+        diff = min(diff, arr[i + 1] - arr[i]);
+    }
+    cout << diff / 2 + 1 << el;
 }
 
 int32_t main(void)

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define rep(i, n) for (int i = 0; i < (n); i++)
+#define forn(i, n) for (int i = 0; i < (n); i++)
 #define ll long long
 #define lld long double
 #define el '\n'
@@ -26,9 +26,18 @@ void print(T& a)
 
 void solve(int tc)
 {
-    int a = 3, b = 7;
-    cout << a % b << el;
-    cout << (a - b) % b << el;
+    int n;
+    string s;
+    cin >> n >> s;
+    unordered_map<string, int> mp;
+    for (int i = 0; i < n - 1; i++) {
+        string subs = string(1, s[i]) + s[i + 1];
+        if (mp[subs] && mp[subs] != i) {
+            yes; return;
+        }
+        if (mp[subs] == 0) mp[subs] = i + 1;
+    }
+    no;
 }
 
 int32_t main(void)
