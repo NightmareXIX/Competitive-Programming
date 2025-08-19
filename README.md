@@ -1,21 +1,4 @@
 ## Codeforces Submissions
-
-*Auto-generated with ❤️ using [Codeforces Submission Fetcher](https://github.com/Andrew-Velox/Codeforces-Submission-Fetcher-Extension)*
-
-## Introduction
-
-A repository to keep track of problem solving practice, containing solutions from platforms:
-
-• **Codeforces**
-
-> Codeforces is a website which hosts competitive programming contests: [http://codeforces.com](http://codeforces.com)
-
-
-
-## Contents
-
-
-
 | # | Title | Solution | Tags | Submitted |
 |:-:|-------|----------|------|-----------|
 | 549 | [G - ABBC or BACB](https://codeforces.com/contest/1873/problem/G) | [C++23 (GCC 14-64, msys2)](https://codeforces.com/contest/1873/submission/334560641) | `constructive algorithms` `greedy` `*1500` | Aug 19 2025, 21:57 |
