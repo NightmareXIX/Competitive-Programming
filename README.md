@@ -1,4 +1,4 @@
-## Codeforces Submissions
+## Codeforces Accepted Submissions
 | # | Title | Solution | Tags | Submitted |
 |:-:|-------|----------|------|-----------|
 | 549 | [G - ABBC or BACB](https://codeforces.com/contest/1873/problem/G) | [C++23 (GCC 14-64, msys2)](https://codeforces.com/contest/1873/submission/334560641) | `constructive algorithms` `greedy` `*1500` | Aug 19 2025, 21:57 |
